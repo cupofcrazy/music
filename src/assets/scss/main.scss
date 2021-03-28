@@ -1,0 +1,101 @@
+@import './fonts';
+@import './variables';
+@import './mixins';
+@import './reset';
+@import './base';
+
+
+:root {
+    --vh: 1;
+    --main-color: #111111;
+    --accent-color: #f0f3fa;
+    --secondary-color: #FFD500;
+    --border-radius: 4px;
+    --grid-columns: 12;
+    --grid-gap: .75rem;
+    --font-sm: 1rem;
+    --font-md: 3rem;
+    --font-lg: 5rem;
+    --heading-sm: 1.875rem;
+    --heading-md: 2.625rem;
+    --heading-lg: 3.625rem;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,.2);
+}
+
+html {
+    font-family: $font-sans-serif;
+}
+
+body {
+  background-color: var(--main-color);
+
+    &.dark {
+        --main-color: #111111;
+        --accent-color: #FFFFFF;
+        --secondary-color: #646464;
+    }
+}
+
+// CSS Transitions
+.fade-enter-active, .fade-leave-active {
+    transition: all .5s ease;
+}
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+    transition: all .3s ease;
+}
+.slide-enter-active, .slide-leave-active {
+    transition: all 1s $easeOutExpo;
+}
+.slide-enter, .slide-leave-to {
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all .5s $easeOutExpo;
+}
+.slide-down-enter-active, .slide-down-leave-active {
+    // transform: translateX(-45px);
+    transition: all .5s $easeInOutExpo;
+}
+.slide-down-enter, .slide-down-leave-to {
+    // height: 0;
+    transform: translateX(45px);
+    opacity: 0;
+    transition: all .5s $easeInOutExpo;
+}
+
+// animations
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.rotate {
+    animation: rotation 12s linear infinite;
+}
+
+.icon {
+    width: 16px;
+    path, line {
+        stroke: var(--accent-color);
+    }
+}
+
+button {
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
