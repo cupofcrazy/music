@@ -19,7 +19,7 @@ const authEndpoint = 'https://accounts.spotify.com/authorize';
 // }
 
 const AUTH_ENDPOINT = 'https://accounts.spotify.com/authorize'
-const REDIRECT_URI = process.env.NODE_ENV === 'development' ? 'http://192.168.137.1:8080' : 'http://tones.vercel.app'
+const REDIRECT_URI = process.env.NODE_ENV === 'development' ? 'http://192.168.137.1:8080' : 'http://music-bay.vercel.app'
 
 // export const getAccessToken = async () => {
 //   const response = await fetch('https://accounts.spotify.com/api/token', {
